@@ -1,5 +1,4 @@
 export const AppStateReducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
     case "add":
       return {
@@ -16,7 +15,6 @@ export const AppStateReducer = (state, action) => {
     case "Edit":
       let getList = [...state.listTodo]
       const index = getList.findIndex((item) => item.id === action.payload.id);
-
       getList.splice(index, 1, action.payload);
       return { ...state, listTodo: getList }
 
